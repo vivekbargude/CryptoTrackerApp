@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.compose.compiler)
+    alias(libs.plugins.kotlin.serialization)
 }
 
 android {
@@ -21,7 +22,8 @@ android {
     buildTypes {
 
         debug {
-            buildConfigField("String", "BASE_URL","\"https://api.coincap.io/v2/\"")
+            buildConfigField("String", "BASE_URL","\"https://rest.coincap.io/v3/\"")
+            buildConfigField("String", "COINCAP_API_KEY","\"ab1f38e57252c9d52b857ea2db5076acb3660fef39bbb219bfb7a8f52027985d\"")
         }
 
         release {
@@ -31,7 +33,8 @@ android {
                 "proguard-rules.pro"
             )
 
-            buildConfigField("String", "BASE_URL","\"https://api.coincap.io/v2/\"")
+            buildConfigField("String", "BASE_URL","\"https://rest.coincap.io/v3/\"")
+            buildConfigField("String", "COINCAP_API_KEY","\"ab1f38e57252c9d52b857ea2db5076acb3660fef39bbb219bfb7a8f52027985d\"")
         }
     }
     compileOptions {
