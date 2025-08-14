@@ -7,7 +7,6 @@ import io.ktor.util.network.UnresolvedAddressException
 import kotlinx.coroutines.ensureActive
 import kotlinx.serialization.SerializationException
 import kotlin.coroutines.coroutineContext
-import kotlin.math.truncate
 
 suspend inline fun <reified T> safeCall(
     execute: () -> HttpResponse

@@ -9,7 +9,6 @@ import com.example.cryptotracker.BuildConfig
  */
 fun constructUrl(url: String): String {
     val baseUrl = BuildConfig.BASE_URL
-    val apiKeyParam = "apiKey=${BuildConfig.COINCAP_API_KEY}"
 
     // Build the full path
     val fullUrl = when {
@@ -19,9 +18,5 @@ fun constructUrl(url: String): String {
     }
 
     // Append the API key properly (respect existing query params)
-    return if (fullUrl.contains("?")) {
-        "$fullUrl&$apiKeyParam"
-    } else {
-        "$fullUrl?$apiKeyParam"
-    }
+    return fullUrl
 }
